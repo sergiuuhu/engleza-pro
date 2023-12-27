@@ -235,13 +235,18 @@ const Module = (p) => {
   );
 };
 
-const hex2a = (hexx) => {
-  var hex = hexx.toString();
-  var str = '';
-  for (var i = 0; i < hex.length; i += 2)
-      str += String.fromCharCode(parseInt(hex.substr(i, 2), 16));
-  return str;
-}
+const hex2a = (hexString) => {
+    // Convert hexadecimal string to ArrayBuffer
+    const arrayBuffer = new Uint8Array(hexString.match(/[\da-f]{2}/gi).map(h => parseInt(h, 16))).buffer;
+  
+    // Create a TextDecoder with UTF-8 encoding
+    const textDecoder = new TextDecoder('utf-8');
+  
+    // Decode ArrayBuffer to UTF-8 encoded string
+    const utf8String = textDecoder.decode(arrayBuffer);
+  
+    return utf8String;
+  }
 
 const styles = {
   card: {
