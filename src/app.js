@@ -1,9 +1,6 @@
 import React, { useEffect } from "react";
-import ReactGA from "react-ga4";
 import Modules from "./modules";
 import Module from "./module";
-
-// ReactGA.initialize("G-SBNBGZLG0E");
 
 const ts = require("./ts.json");
 

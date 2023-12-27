@@ -1,7 +1,5 @@
 import React, { useEffect, useState, useCallback, useRef } from "react";
 import { useAudioPlayer } from "react-use-audio-player";
-import ReactGA from "react-ga4";
-import axios from "axios";
 
 const { modules } = require("./modules.json");
 
@@ -54,12 +52,6 @@ const Module = (p) => {
 
   const playOnce = useCallback(
     (onend = () => false) => {
-      ReactGA.event({
-        category: "Audio Played",
-        action: p.module,
-        label: file,
-      });
-
       const domain = "https://hub.engleza.pro"
 
       const loadPath = `${domain}/${path.current}/${file}`;
