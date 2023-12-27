@@ -68,10 +68,10 @@ const Modules = (p) => {
         </List>
       </div>
 
-      {/* <a href="https://englishonthego.amigo.cy" style={styles.otg}>
+      {/* <a href="https://englishonthego.engleza.pro" style={styles.otg}>
        <img
          src="./onthego.gif"
-         alt="Amigo.cy - English on The Go 🎧"
+         alt="Engleza.pro - English on The Go 🎧"
          style={styles.otgLogo}
        />
        <div style={styles.otgTitle}>{p.say("English on The Go")} 🎧</div>
@@ -83,7 +83,7 @@ const Modules = (p) => {
       <div style={styles.footer}>
         <p>
           {p.say(
-            "Amigo.cy includes 59 modules of the most common phrases and expressions used in the English language that you can use for deep learning and accent training.",
+            "Engleza.pro includes 59 modules of the most common phrases and expressions used in the English language that you can use for deep learning and accent training.",
           )}
         </p>
 

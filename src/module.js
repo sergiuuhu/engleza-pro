@@ -9,7 +9,6 @@ const Module = (p) => {
   const [repeatNr, setRepeatNr] = useState(0);
   const [fileIndex, setFileIndex] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
-  const [translations, setTranslations] = useState({});
 
   const files = useRef(modules[p.voice][p.module]);
   const path = useRef(["modules", p.voice, p.module].join("/"));
@@ -106,22 +105,6 @@ const Module = (p) => {
   }, [p]);
 
   useEffect(() => {
-    setRepeatNr(0);
-
-    if (p.translations) {
-      const tPath = `/translations/${encodeURIComponent(p.module)}.json`;
-
-      axios(tPath)
-        .then((t) => {
-          setTranslations(t.data);
-        })
-        .catch((e) => {
-          console.log("Failed to load translations.");
-        });
-    }
-  }, [p.translations, p.module]);
-
-  useEffect(() => {
     if (maxRepeats > 0 && isPlaying) {
       console.log("Playing #" + fileIndex);
       play();
@@ -149,7 +132,7 @@ const Module = (p) => {
     <div style={styles.card}>
       <div style={styles.header}>
         <button className={"abtn"} onClick={close} style={styles.logo}>
-          <img style={styles.logoImg} src="/logo.png" alt="Amigo.cy" />
+          <img style={styles.logoImg} src="/logo.png" alt="Engleza.pro" />
         </button>
 
         <button className={"abtn"} style={styles.close} onClick={close}>
@@ -173,7 +156,7 @@ const Module = (p) => {
       <div style={styles.text}>{text}</div>
 
       <div style={styles.translation}>
-        {(translations[text] || {})[p.translations]}
+        {p.say(text)}
       </div>
 
       <div style={styles.controls}>
