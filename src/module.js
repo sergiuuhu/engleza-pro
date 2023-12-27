@@ -8,7 +8,7 @@ const Module = (p) => {
   const [fileIndex, setFileIndex] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
 
-  const files = useRef(shuffle(modules[p.voice][p.module]));
+  const files = useRef((modules[p.voice][p.module]));
   const path = useRef(["modules", p.voice, p.module].join("/"));
   const filesLength = useRef(files.current.length);
 
