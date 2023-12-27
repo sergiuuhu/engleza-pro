@@ -10,7 +10,7 @@ const ts = require("./ts.json");
 export const App = () => {
   const [isReady, setIsReady] = React.useState(false);
   const [voice, setVoice] = React.useState(voices[2]);
-  const [repeat, setRepeat] = React.useState(0);
+  const [repeat, setRepeat] = React.useState(2);
   const [module, setModule] = React.useState(null);
 
   useEffect(() => {
