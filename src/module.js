@@ -8,7 +8,7 @@ const Module = (p) => {
   const [fileIndex, setFileIndex] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
 
-  const files = useRef(modules[p.voice][p.module]);
+  const files = useRef(shuffle(modules[p.voice][p.module]));
   const path = useRef(["modules", p.voice, p.module].join("/"));
   const filesLength = useRef(files.current.length);
 
@@ -211,17 +211,35 @@ const Module = (p) => {
 };
 
 const hex2a = (hexString) => {
-    // Convert hexadecimal string to ArrayBuffer
-    const arrayBuffer = new Uint8Array(hexString.match(/[\da-f]{2}/gi).map(h => parseInt(h, 16))).buffer;
-  
-    // Create a TextDecoder with UTF-8 encoding
-    const textDecoder = new TextDecoder('utf-8');
-  
-    // Decode ArrayBuffer to UTF-8 encoded string
-    const utf8String = textDecoder.decode(arrayBuffer);
-  
-    return utf8String;
+  // Convert hexadecimal string to ArrayBuffer
+  const arrayBuffer = new Uint8Array(hexString.match(/[\da-f]{2}/gi).map(h => parseInt(h, 16))).buffer;
+
+  // Create a TextDecoder with UTF-8 encoding
+  const textDecoder = new TextDecoder('utf-8');
+
+  // Decode ArrayBuffer to UTF-8 encoded string
+  const utf8String = textDecoder.decode(arrayBuffer);
+
+  return utf8String;
+}
+
+const shuffle = (array) => {
+  let currentIndex = array.length,  randomIndex;
+
+  // While there remain elements to shuffle.
+  while (currentIndex > 0) {
+
+    // Pick a remaining element.
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex--;
+
+    // And swap it with the current element.
+    [array[currentIndex], array[randomIndex]] = [
+      array[randomIndex], array[currentIndex]];
   }
+
+  return array;
+}
 
 const styles = {
   card: {
