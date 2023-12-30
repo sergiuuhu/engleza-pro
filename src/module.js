@@ -110,8 +110,8 @@ const Module = (p) => {
       } else if (repeatNr === maxRepeats) {
         setRepeatNr(0);
 
-        const checkFile = files.current[String(fileIndex + 1).padStart(3, "0")]
-
+        const checkFile = `${files.current[String(fileIndex + 1).padStart(3, "0")]}.mp3`;
+        
         if (checkFile) {
           setFileIndex(fileIndex + 1);
         } else if (!checkFile && isPlaying) {
