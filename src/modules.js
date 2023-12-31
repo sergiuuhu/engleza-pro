@@ -39,6 +39,10 @@ const Modules = (p) => {
           <br />
           {p.say("Simply listen and repeat out loud.")}
         </div>
+
+        <a className="abtn" style={styles.shop} href="https://shop.shadowenglish.com/" target="_blank">
+        🎁 Shop 
+        </a>
       </div>
 
       <div style={styles.preferences}>
@@ -165,6 +169,17 @@ const emojis = [
 ];
 
 const styles = {
+  shop: {
+    position: "absolute",
+    top: "5px",
+    right: 0,
+    background: "rgba(255, 255, 255, 0.1)",
+    color: "#fff",
+    border: "none",
+    padding: "10px 15px",
+    borderRadius: "3px",
+    fontWeight: 600
+  },
   preferences: {
     padding: "10px 0 0 0",
     display: "flex",
