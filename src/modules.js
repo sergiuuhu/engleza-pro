@@ -87,7 +87,7 @@ const Modules = (p) => {
       <div style={styles.footer}>
         <p>
           {p.say(
-            "Engleza.pro includes 59 modules of the most common phrases and expressions used in the English language that you can use for deep learning and accent training.",
+            "59 modules of the most common phrases and expressions used in the English language that you can use for deep learning and accent training.",
           )}
         </p>
 
