@@ -28,11 +28,11 @@ const Modules = (p) => {
             width={80}
             height={80}
             src="/logo.png"
-            alt="Engleza.pro - Engleza ușor și rapid"
+            alt="EnglishFlow.AI - Engleza ușor și rapid"
           />
         </div>
 
-        <div style={styles.title}>Engleza.pro</div>
+        <div style={styles.title}>RO.EnglishFlow.AI</div>
 
         <div style={styles.subtitle}>
           {p.say("Start speaking English fluently & fast.")}
@@ -40,7 +40,7 @@ const Modules = (p) => {
           {p.say("Simply listen and repeat out loud.")}
         </div>
 
-        <a className="abtn" style={styles.shop} href="https://shop.shadowenglish.com/" target="_blank">
+        <a className="abtn" style={styles.shop} href="https://englishflow.ai/" target="_blank">
         🎁 Shop 
         </a>
       </div>
