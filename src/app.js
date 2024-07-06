@@ -44,7 +44,7 @@ const BrandedOverlay = () => {
         src="/logo.png"
         width={80}
         height={80}
-        alt="Engleza.pro - Engleza ușor și rapid"
+        alt="EnglishFlow.AI - Engleza ușor și rapid"
       />
     </div>
   );
